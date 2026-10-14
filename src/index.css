@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+html {
+  background: #08080c;
+}
+
+body {
+  background: #08080c;
+  color: #f4f4f6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #a3e635;
+  color: #08080c;
+}
+
+/* Infinite marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 24s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Aurora gradient text */
+@keyframes aurora {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.aurora-text {
+  background: linear-gradient(110deg, #a3e635, #22d3ee, #e879f9, #a3e635);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: aurora 8s ease infinite;
+}
+
+/* Glow ring behind the 3D stage */
+.stage-glow {
+  background: radial-gradient(ellipse 60% 55% at 50% 45%, rgba(163, 230, 53, 0.14), rgba(34, 211, 238, 0.08), transparent 70%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #08080c; }
+::-webkit-scrollbar-thumb { background: #27272a; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
